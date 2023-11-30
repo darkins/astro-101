@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import profilePic from '../images/profile-pic.jpg';
+---
+
+<div class="profile">
+  <Image src={profilePic} alt="Profile Picture" class="profile-picture" />
+  <div class="profile-details">
+    <h1>Frau Katerina</h1>
+    <h2>VP of Engineering at Google</h2>
+    <p>
+      Helping developers be excellent and succeed at building scaleable products.
+    </p>
+  </div>
+</div>
+<style>
+	.profile {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 1rem 0 3rem;
+	}
+	.profile-details {
+		flex: 1 0 300px;
+	}
+
+	.profile-details > h1 {
+		margin-top: 0;
+	}
+
+	.profile-picture {
+		 border-radius: 50%;
+		 margin: 0 2rem 1rem;
+	}
+</style>

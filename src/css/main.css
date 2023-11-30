@@ -1,0 +1,51 @@
+html {
+  --background: white;
+  --grey-200: #222;
+  --grey-400: #444;
+  --grey-600: #333;
+  --grey-900: #111;
+}
+
+html.dark {
+  --background: black;
+  --grey-200: #eaeaea;
+  --grey-400: #acacac;
+  --grey-600: #fff;
+  --grey-900: #fafafa;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--grey-600);
+  background: var(--background);
+  transition: all 0.2s ease-in-out;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+h1 + h2 {
+  font-size: 1.3rem;
+  margin-top: -1.4rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.layout {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+p,
+li {
+  font-size: 1rem;
+  color: var(--grey-400);
+  opacity: 0.8;
+}
+
+li {
+  margin: 1rem 0;
+}
