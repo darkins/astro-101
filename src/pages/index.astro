@@ -4,6 +4,12 @@ import Layout from "../layouts/Layout.astro";
 
 const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
+// Astro.glob
+const blogs = await Astro.glob<{
+  poster: string;
+  title: string;
+  subtitle: string;
+}>("../pages/blogs/*.md");
 ---
 
 <Layout title="Frau Katarina">
@@ -47,6 +53,24 @@ const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
       },
     ]}
   />
+
+	<div class="featured-blogs">
+    <h3 class="featured-blogs__title">Featured Blogs</h3>
+    <p class="featured-blogs__description">
+      Opinion pieces that will change eveything you know about web development.
+    </p>
+  </div>
+	<ol>
+    {
+      blogs.map((blog) => (
+        <li class="blogs__list">
+          <a href={blog.url} class="blog__link">
+            {blog.frontmatter.title}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
 </Layout>
 
 <style>
